@@ -1,0 +1,38 @@
+#searchName{
+ width: 45%;
+}
+
+.wrapper{
+ position: relative;
+}
+
+.wrapper{
+ height: 100px;
+ background-image: url(coffeehouse.jpg);
+ height: 100%;
+ opacity: 0.4;
+}
+.container-fluid{
+ position: absolute;
+ z-index: 10;
+}
+.jumbotron{
+ margin: 0px;
+ padding-top: 3%;
+ padding-bottom: 3%;
+}
+
+.form-control{
+ opacity: 1;
+ margin-top: 5%;
+ margin-left: 6%;
+}
+
+.btn{
+ margin: 3% 45% 45% 45%;
+ opacity: 1;
+}
+
+
+
+
