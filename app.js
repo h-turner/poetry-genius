@@ -30,12 +30,12 @@ $(document).ready(function () {
         $.ajax({
             url: poemURL,
             method: 'GET'
-        }).then(function(response) {
+        }).then(function (response) {
             console.log(response.lines);
             // render ();
             $('.displayP').empty();
-            for ( let i = 0; i < response[0].lines.length; i++) {
-            $('.displayP').append(`<p class="wordsDef">${response[0].lines[i]}</p>`)
+            for (let i = 0; i < response[0].lines.length; i++) {
+                $('.displayP').append(`<p class="wordsDef">${response[0].lines[i]}</p>`)
             }
         })
 
