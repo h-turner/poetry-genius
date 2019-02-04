@@ -17,6 +17,7 @@ $(document).ready(function () {
         url: titlesURL,
         method: 'GET'
     }).then(function (response) {
+        $('.displayP').empty();
         for (let i = 0; i < response.length; i++) {
             console.log(response[i].title)
             let poemTitle = response[i].title;
@@ -38,13 +39,21 @@ $('#myDude').on("click",dudePoem);
             url: poemURL,
             method: 'GET'
         }).then(function (response) {
-            console.log(response.lines);
+            // console.log(response.lines);
             // render ();
+            let paraArray = response[0];
+            console.log(paraArray)
             $('.displayP').empty();
             for (let i = 0; i < response[0].lines.length; i++) {
-                let wordsArray = response[0].lines[i]
-                console.log(wordsArray);
+                let wordsArray = response[0].lines[i].split(' ');
+                console.log(wordsArray)
+                $('.displayP').append(`<p>${wordsArray.join(' ')}</p>`);
 
+                // console.log(wordsArray[0]);
+                
+            
+            
+            
             }
         })
 
@@ -65,28 +74,28 @@ $('#myDude').on("click",dudePoem);
 
 
 
-const addButton = function(e) {
-    e.preventDefault();
-    let validationURL = "https://api.iextrading.com/1.0/ref-data/symbols";
-    let validationList = [];
-    $.ajax({
-        url: validationURL,
-        method: 'GET'
-    }).then(function(response) {
-        for (let i = 0; i < response.length; i++) {
-        validationList.push(response[i].symbol);
-        }
+// const addButton = function(e) {
+//     e.preventDefault();
+//     let validationURL = "https://api.iextrading.com/1.0/ref-data/symbols";
+//     let validationList = [];
+//     $.ajax({
+//         url: validationURL,
+//         method: 'GET'
+//     }).then(function(response) {
+//         for (let i = 0; i < response.length; i++) {
+//         validationList.push(response[i].symbol);
+//         }
 
-        const stock = $('#stock-input').val().trim().toUpperCase();
-        for (let i = 0; i < validationList.length; i++) {
-            if (validationList[i] === stock) {
-                stocklist.push(stock);
-                $('#stock-input').val("");
-                render();
-                return
-            }
-        }
-        alert("please enter a valid stock symbol");
-})
+//         const stock = $('#stock-input').val().trim().toUpperCase();
+//         for (let i = 0; i < validationList.length; i++) {
+//             if (validationList[i] === stock) {
+//                 stocklist.push(stock);
+//                 $('#stock-input').val("");
+//                 render();
+//                 return
+//             }
+//         }
+//         alert("please enter a valid stock symbol");
+// })
 
-}
+// }
