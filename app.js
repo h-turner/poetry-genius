@@ -1,13 +1,6 @@
 $(document).ready(function () {
 
-    // $('#opener').click(function() {
-    //     $('#defDialog').dialog();
-    //     return false;
-    // });
-
-    // const authorName =  $('#authInput').val().trim().toLowerCase();
-    // const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
-
+//function that populates page with works by searched Author.
     const dudePoem = function () {
 
         let authorName =  $('#authInput').val().trim().toLowerCase();
@@ -27,9 +20,16 @@ $(document).ready(function () {
     });
 }
 
+//provides functionality to search button to run dudePoem function. Also works with 'enter' key.
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+       dudePoem();
+    }
+ });
 $('#myDude').on("click",dudePoem);
 
 
+//function to populate page with the poetry work that is clicked.
     const displayPoem = function (authorName) {
         let titleString = $(this).attr('data-poemTitle');
         let urlString = titleString.split(' ').join('%20')
@@ -40,12 +40,12 @@ $('#myDude').on("click",dudePoem);
             method: 'GET'
         }).then(function (response) {
             console.log(response.lines);
-            // render ();
+            // targets display div, empties it, and repopulates it with poem.
             $('.displayP').empty();
             for (let i = 0; i < response[0].lines.length; i++) {
                 let wordsArray = response[0].lines[i].split(' ');
                 console.log(wordsArray);
-                $('.displayP').append(`<p class="wordsDef">${response[0].lines[i]}</p>`)
+                $('.displayP').append(`<p>${response[0].lines[i]}</p>`)
                 
                 console.log(wordsArray[0]);
             }
@@ -53,13 +53,9 @@ $('#myDude').on("click",dudePoem);
 
     }
 
-    
-    // const defineWord = function() {
-    //     let wordDef = $(this).attr('data-word')
-    // }
-
+//gets clicked on word (or selected text if text is selected)
     $("#display").click(function() {
-        // Gets clicked on word (or selected text if text is selected)
+        $('#page2').hide();
         let word = '';
         if (window.getSelection && (sel = window.getSelection()).modify) {
             // Webkit, Gecko
@@ -72,7 +68,49 @@ $('#myDude').on("click",dudePoem);
                 s.modify('move', 'forward', 'character'); //clear selection
             }
         }
-        // } else if ((sel = document.selection) && sel.type != "Control") {
+        console.log(word);
+
+    
+        var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://wordsapiv1.p.mashape.com/words/${word}`,
+        "method": "GET",
+        "headers": {
+          "X-Mashape-Key": "a647b507f6msh19b9c8f45abc13dp10ee28jsn1ab0da6d123b",
+          "cache-control": "no-cache",
+          "Postman-Token": "a435f077-ff32-4e13-af6f-de2fe9da04c8"
+        }
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        $('#page2').empty();
+        $('#page2').hide();
+        $('#page2').append(`<p>Word: ${response.word}</p>`)
+        $('#page2').append(`<p>Pronunciation: ${response.pronunciation.all}</p>`)
+        for ( let i = 0; i < response.results.length; i++) {
+        $('#page2').append(`<p>Definition: ${response.results[i].definition}</p>`);
+        }
+        $('#page2').show();
+        
+      });
+    });
+  
+});
+
+
+
+
+
+
+
+
+
+
+
+// compatability for older browsers
+    // } else if ((sel = document.selection) && sel.type != "Control") {
         //     // IE 4+
         //     var textRange = sel.createRange();
         //     if (!textRange.text) {
@@ -84,11 +122,3 @@ $('#myDude').on("click",dudePoem);
         //     }
         //     word = textRange.text;
         // }
-        console.log(word);
-    });
-});
-
-//leftovers
-//<a href="http://poetrydb.org/author,title/${authorName};${response[i].title}">${response[i].title}</a>
-
-//format is poetrydb.org/author,title/shakespeare;sonnet%201:%20from%20fairest%20creatures%20we%20desire%20increase
