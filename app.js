@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    // $('#opener').click(function() {
+    //     $('#defDialog').dialog();
+    //     return false;
+    // });
+
     const authorName = "Shakespeare" //this will be = inputField.val()
 
     const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
@@ -35,7 +40,6 @@ $(document).ready(function () {
         })
 
     }
-
     // const defineWord = function() {
     //     let wordDef = $(this).attr('data-word')
     // }
