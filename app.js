@@ -17,6 +17,7 @@ $(document).ready(function () {
         url: titlesURL,
         method: 'GET'
     }).then(function (response) {
+        $('.displayP').empty();
         for (let i = 0; i < response.length; i++) {
             console.log(response[i].title)
             let poemTitle = response[i].title;
@@ -42,7 +43,11 @@ $('#myDude').on("click",dudePoem);
             // render ();
             $('.displayP').empty();
             for (let i = 0; i < response[0].lines.length; i++) {
+                let wordsArray = response[0].lines[i].split(' ');
+                console.log(wordsArray);
                 $('.displayP').append(`<p class="wordsDef">${response[0].lines[i]}</p>`)
+                
+                console.log(wordsArray[0]);
             }
         })
 
@@ -52,9 +57,36 @@ $('#myDude').on("click",dudePoem);
     // const defineWord = function() {
     //     let wordDef = $(this).attr('data-word')
     // }
+
+    $("#display").click(function() {
+        // Gets clicked on word (or selected text if text is selected)
+        let word = '';
+        if (window.getSelection && (sel = window.getSelection()).modify) {
+            // Webkit, Gecko
+            var s = window.getSelection();
+            if (s.isCollapsed) {
+                s.modify('move', 'forward', 'character');
+                s.modify('move', 'backward', 'word');
+                s.modify('extend', 'forward', 'word');
+                word = s.toString();
+                s.modify('move', 'forward', 'character'); //clear selection
+            }
+        }
+        // } else if ((sel = document.selection) && sel.type != "Control") {
+        //     // IE 4+
+        //     var textRange = sel.createRange();
+        //     if (!textRange.text) {
+        //         textRange.expand("word");
+        //     }
+        //     // Remove trailing spaces
+        //     while (/\s$/.test(textRange.text)) {
+        //         textRange.moveEnd("character", -1);
+        //     }
+        //     word = textRange.text;
+        // }
+        console.log(word);
+    });
 });
-
-
 
 //leftovers
 //<a href="http://poetrydb.org/author,title/${authorName};${response[i].title}">${response[i].title}</a>
