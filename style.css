@@ -2,13 +2,26 @@
   width: 45%;
 } */
 
+.display-4 {
+  font-family: "Monsieur La Doulaise", cursive;
+  /* padding: 30px 100px 180px 100px; */
+  text-align: center;
+  /* border: dashed 15px #66fcf1; */
+  background-image: url(https://i.pinimg.com/474x/75/c6/49/75c649e23d402c53379e1b2d56a5a996.jpg);
+  -webkit-animation: Border 15s infinite alternate;
+}
+
+body {
+  font-family: "Open Sans", serif;
+}
+
 .wrapper {
   position: relative;
 }
 
 .container {
-    border: 0px;
-    border:hidden;
+  border: 0px;
+  border: hidden;
 }
 
 .wrapper {
@@ -41,7 +54,7 @@
 } */
 
 .container {
- /* background-image: url(https://earlyamericanists.files.wordpress.com/2012/10/background2.jpg); */
+  /* background-image: url(https://earlyamericanists.files.wordpress.com/2012/10/background2.jpg); */
 }
 
 .jumbotron {
@@ -71,6 +84,6 @@
 } */
 
 .sbar {
-    width: 300px;
-    align-items:center
+  width: 300px;
+  align-items: center;
 }
