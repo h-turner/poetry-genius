@@ -35,7 +35,9 @@ $(document).ready(function () {
             // render ();
             $('.displayP').empty();
             for (let i = 0; i < response[0].lines.length; i++) {
-                $('.displayP').append(`<p class="wordsDef">${response[0].lines[i]}</p>`)
+                let wordsArray = response[0].lines[i]
+                console.log(wordsArray);
+
             }
         })
 
@@ -51,3 +53,31 @@ $(document).ready(function () {
 //<a href="http://poetrydb.org/author,title/${authorName};${response[i].title}">${response[i].title}</a>
 
 //format is poetrydb.org/author,title/shakespeare;sonnet%201:%20from%20fairest%20creatures%20we%20desire%20increase
+
+
+
+const addButton = function(e) {
+    e.preventDefault();
+    let validationURL = "https://api.iextrading.com/1.0/ref-data/symbols";
+    let validationList = [];
+    $.ajax({
+        url: validationURL,
+        method: 'GET'
+    }).then(function(response) {
+        for (let i = 0; i < response.length; i++) {
+        validationList.push(response[i].symbol);
+        }
+
+        const stock = $('#stock-input').val().trim().toUpperCase();
+        for (let i = 0; i < validationList.length; i++) {
+            if (validationList[i] === stock) {
+                stocklist.push(stock);
+                $('#stock-input').val("");
+                render();
+                return
+            }
+        }
+        alert("please enter a valid stock symbol");
+})
+
+}
