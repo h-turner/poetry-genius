@@ -5,9 +5,13 @@ $(document).ready(function () {
     //     return false;
     // });
 
-    const authorName = "Shakespeare" //this will be = inputField.val()
+    // const authorName =  $('#authInput').val().trim().toLowerCase();
+    // const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
 
-    const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
+    const dudePoem = function () {
+
+        let authorName =  $('#authInput').val().trim().toLowerCase();
+        const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
 
     $.ajax({
         url: titlesURL,
@@ -20,9 +24,12 @@ $(document).ready(function () {
         }
         $('.titleP').on("click", displayPoem);
     });
+}
+
+$('#myDude').on("click",dudePoem);
 
 
-    const displayPoem = function () {
+    const displayPoem = function (authorName) {
         let titleString = $(this).attr('data-poemTitle');
         let urlString = titleString.split(' ').join('%20')
         console.log(urlString);
@@ -42,6 +49,8 @@ $(document).ready(function () {
         })
 
     }
+
+    
     // const defineWord = function() {
     //     let wordDef = $(this).attr('data-word')
     // }
