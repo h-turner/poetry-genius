@@ -1,13 +1,5 @@
 $(document).ready(function () {
 
-    // $('#opener').click(function() {
-    //     $('#defDialog').dialog();
-    //     return false;
-    // });
-
-    // const authorName =  $('#authInput').val().trim().toLowerCase();
-    // const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
-
     const dudePoem = function () {
 
         let authorName =  $('#authInput').val().trim().toLowerCase();
@@ -46,24 +38,72 @@ $('#myDude').on("click",dudePoem);
             $('.displayP').empty();
             for (let i = 0; i < response[0].lines.length; i++) {
                 let wordsArray = response[0].lines[i].split(' ');
-                console.log(wordsArray)
-                $('.displayP').append(`<p>${wordsArray.join(' ')}</p>`);
-
-                // console.log(wordsArray[0]);
+                console.log(wordsArray);
+                $('.displayP').append(`<p class="wordsDef">${response[0].lines[i]}</p>`)
                 
-            
-            
-            
+                console.log(wordsArray[0]);
+
+                unirest.get("https://wordsapiv1.p.mashape.com/words/soliloquy")
+.header("X-Mashape-Key", "<08610a2a97mshaa47ca0a7cffc11p1774eajsnfe2e903e20ec>")
+.header("Accept", "application/json")
+.end(function (result) {
+  console.log(result.status, result.headers, result.body);
+});
             }
         })
 
     }
 
-    
-    // const defineWord = function() {
-    //     let wordDef = $(this).attr('data-word')
-    // }
+//     const wordsAPI = function (word) {
+//         console.log(word);
+//         const wordURL = `https://wordsapiv1.p.mashape.com/words/run`
+//         $.ajax({
+//             url: wordURL,
+//             method: 'GET',
+//             dataType: "json",
+//             header: { "X-Mashape-Key": "08610a2a97mshaa47ca0a7cffc11p1774eajsnfe2e903e20ec" }
+//         }).then(function (response){
+
+//         console.log(response);
+        
+//     });
+// }
+
+
+
+
+    $("#display").click(function() {
+        // Gets clicked on word (or selected text if text is selected)
+        let word = '';
+        if (window.getSelection && (sel = window.getSelection()).modify) {
+            // Webkit, Gecko
+            var s = window.getSelection();
+            if (s.isCollapsed) {
+                s.modify('move', 'forward', 'character');
+                s.modify('move', 'backward', 'word');
+                s.modify('extend', 'forward', 'word');
+                word = s.toString();
+                s.modify('move', 'forward', 'character'); //clear selection
+            }
+        }
+        console.log(word);
+    });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -99,3 +139,16 @@ $('#myDude').on("click",dudePoem);
 // })
 
 // }
+
+// } else if ((sel = document.selection) && sel.type != "Control") {
+        //     // IE 4+
+        //     var textRange = sel.createRange();
+        //     if (!textRange.text) {
+        //         textRange.expand("word");
+        //     }
+        //     // Remove trailing spaces
+        //     while (/\s$/.test(textRange.text)) {
+        //         textRange.moveEnd("character", -1);
+        //     }
+        //     word = textRange.text;
+        // }
