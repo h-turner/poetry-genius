@@ -15,7 +15,7 @@ $(document).ready(function () {
             for (let i = 0; i < response.length; i++) {
                 console.log(response[i].title)
                 let poemTitle = response[i].title;
-                $('#display').append(`<li class="titleP" data-poemTitle="${poemTitle}">${poemTitle}</li>`);
+                $('#display').append(`<p class="titleP" data-poemTitle="${poemTitle}">${poemTitle}</p>`);
             }
             $('.titleP').on("click", displayPoem);
         });
