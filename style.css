@@ -46,6 +46,7 @@
     color: black;
     font-weight: bolder;
     opacity: 100%;
+    cursor: pointer;
 }
 
 body {
@@ -65,3 +66,4 @@ body {
     height: 450px;
     width: 700px;
 }
+
