@@ -2,21 +2,21 @@
   width: 45%;
 } */
 
-.display-4{
-    font-family: 'Monsieur La Doulaise', cursive;
-    font-size: 99px;
-    font:bold;
+.display-4 {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 99px;
+  font: bold;
 }
 
-.lead{
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size: 26px;
+.lead {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 26px;
 }
 
-#Authinput{
-    font-family: 'Miss Fajardose', cursive;
-    font-size:28px;
-    text-align: center;
+#Authinput {
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 36px;  
+  text-align: center;
 }
 
 .wrapper {
@@ -47,10 +47,21 @@
 }
 
 .form-control {
-  /* opacity: 1;
- margin-top: 5%;
- margin-left: 6%; */
+  padding: 10px;
+  height: 50px;
 }
+
+#myDude {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+}
+
+.fas fa-search{
+  height: 30px;
+  width: 30px;
+}
+
 
 /* .btn {
   margin: 3% 45% 45% 45%;
@@ -89,24 +100,24 @@
 } */
 
 .sbar {
-    width: 300px;
-    margin: 0 auto;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .displayP {
-    color: black;
-    font-weight: bolder;
-    opacity: 100%;
+  color: black;
+  font-weight: bolder;
+  opacity: 100%;
 }
 
 body {
-    padding: 10px 55px;
-    background-size: 99%;
+  padding: 10px 55px;
+  background-size: 99%;
 }
 
 #display {
-    height: 450px;
-    width: 700px;
-    overflow: auto;
-    border-image-source: url(https://i.pinimg.com/474x/60/ec/20/60ec20c87d52f4903b89a0cd65b1d655--flourish-border-gaja.jpg);
+  height: 450px;
+  width: 700px;
+  overflow: auto;
+  border-image-source: url(https://i.pinimg.com/474x/60/ec/20/60ec20c87d52f4903b89a0cd65b1d655--flourish-border-gaja.jpg);
 }

@@ -17,6 +17,7 @@ $(document).ready(function () {
         url: titlesURL,
         method: 'GET'
     }).then(function (response) {
+        $('.displayP').empty();  //lines are appended to displayP
         for (let i = 0; i < response.length; i++) {
             console.log(response[i].title)
             let poemTitle = response[i].title;
@@ -26,12 +27,18 @@ $(document).ready(function () {
     });
 }
 
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+       dudePoem();
+    }
+});
+
 $('#myDude').on("click",dudePoem);
 
 
     const displayPoem = function (authorName) {
-        let titleString = $(this).attr('data-poemTitle');
-        let urlString = titleString.split(' ').join('%20')
+        let titleString = $(this).attr('data-poemTitle'); //Data attribute of which poem was clicked on, 
+        let urlString = titleString.split(' ').join('%20') //splits title at every space, inserts %20 at every
         console.log(urlString);
         const poemURL = `http://poetrydb.org/author,title/${authorName};${urlString}`
         $.ajax({
