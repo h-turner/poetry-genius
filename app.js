@@ -1,49 +1,11 @@
 $(document).ready(function () {
 
-<<<<<<< HEAD
-//function that populates page with works by searched Author.
-    const dudePoem = function () {
-
-        let authorName =  $('#authInput').val().trim().toLowerCase();
-        const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
-
-    $.ajax({
-        url: titlesURL,
-        method: 'GET'
-    }).then(function (response) {
-        $('.displayP').empty();
-        for (let i = 0; i < response.length; i++) {
-            console.log(response[i].title)
-            let poemTitle = response[i].title;
-            $('.displayP').append(`<p class="titleP" data-poemTitle="${poemTitle}">${poemTitle}</p>`);
-        }
-        $('.titleP').on("click", displayPoem);
-    });
-}
-
-//provides functionality to search button to run dudePoem function. Also works with 'enter' key.
-$(document).keypress(function(e) {
-    if(e.which == 13) {
-       dudePoem();
-    }
- });
-$('#myDude').on("click",dudePoem);
-
-
-//function to populate page with the poetry work that is clicked.
-    const displayPoem = function (authorName) {
-        let titleString = $(this).attr('data-poemTitle');
-        let urlString = titleString.split(' ').join('%20')
-        console.log(urlString);
-        const poemURL = `http://poetrydb.org/author,title/${authorName};${urlString}`
-=======
     //function that populates page with works by searched Author.
         const dudePoem = function () {
     
             let authorName =  $('#authInput').val().trim().toLowerCase();
             const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
     
->>>>>>> 422de01ce7829ffb5e0a0e5cfaad50f4677442b5
         $.ajax({
             url: titlesURL,
             method: 'GET'
@@ -53,7 +15,7 @@ $('#myDude').on("click",dudePoem);
             for (let i = 0; i < response.length; i++) {
                 console.log(response[i].title)
                 let poemTitle = response[i].title;
-                $('#display').append(`<li class="titleP" data-poemTitle="${poemTitle}">${poemTitle}</li>`);
+                $('#display').append(`<p class="titleP" data-poemTitle="${poemTitle}">${poemTitle}</p>`);
             }
             $('.titleP').on("click", displayPoem);
         });
@@ -64,18 +26,6 @@ $('#myDude').on("click",dudePoem);
         if(e.which == 13) {
            dudePoem();
         }
-<<<<<<< HEAD
-      }
-
-      $.ajax(settings).done(function (response) {
-        console.log(response);
-        $('#page2').empty();
-        // $('#page2').hide();
-        $('#page2').append(`<p>Word: ${response.word}</p>`)
-        $('#page2').append(`<p>Pronunciation: ${response.pronunciation.all}</p>`)
-        for ( let i = 0; i < response.results.length; i++) {
-        $('#page2').append(`<p>Definition: ${response.results[i].definition}</p>`);
-=======
      });
     $('#myDude').on("click",dudePoem);
     
@@ -103,7 +53,6 @@ $('#myDude').on("click",dudePoem);
                 }
             })
     
->>>>>>> 422de01ce7829ffb5e0a0e5cfaad50f4677442b5
         }
     
     //gets clicked on word (or selected text if text is selected)
