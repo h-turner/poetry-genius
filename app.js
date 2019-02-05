@@ -14,7 +14,7 @@ $(document).ready(function () {
         for (let i = 0; i < response.length; i++) {
             console.log(response[i].title)
             let poemTitle = response[i].title;
-            $('.displayP').append(`<li class="titleP" data-poemTitle="${poemTitle}">${poemTitle}</li>`);
+            $('.displayP').append(`<p class="titleP" data-poemTitle="${poemTitle}">${poemTitle}</p>`);
         }
         $('.titleP').on("click", displayPoem);
     });
@@ -86,7 +86,7 @@ $('#myDude').on("click",dudePoem);
       $.ajax(settings).done(function (response) {
         console.log(response);
         $('#page2').empty();
-        $('#page2').hide();
+        // $('#page2').hide();
         $('#page2').append(`<p>Word: ${response.word}</p>`)
         $('#page2').append(`<p>Pronunciation: ${response.pronunciation.all}</p>`)
         for ( let i = 0; i < response.results.length; i++) {
