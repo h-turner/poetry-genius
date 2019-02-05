@@ -10,7 +10,10 @@ $(document).ready(function () {
             url: titlesURL,
             method: 'GET'
         }).then(function (response) {
+            $('#closeBook').hide();
+            $('#openBook').show();
             $('#displayP').hide();
+            $('#display').show();
             $('#display').empty();
             for (let i = 0; i < response.length; i++) {
                 console.log(response[i].title)
@@ -25,11 +28,37 @@ $(document).ready(function () {
     $(document).keypress(function(e) {
         if(e.which == 13) {
            dudePoem();
+           dudePoem2();
         }
      });
     $('#myDude').on("click",dudePoem);
+  
     
     
+
+    const dudePoem2 = function () {
+    
+        let authorName =  $('#authInput2').val().trim().toLowerCase();
+        const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
+
+    $.ajax({
+        url: titlesURL,
+        method: 'GET'
+    }).then(function (response) {
+        $('#displayP').hide();
+        $('#display').show();
+        $('#display').empty();
+        for (let i = 0; i < response.length; i++) {
+            console.log(response[i].title)
+            let poemTitle = response[i].title;
+            $('#display').append(`<p class="titleP" data-poemTitle="${poemTitle}">${poemTitle}</p>`);
+        }
+        $('.titleP').on("click", displayPoem);
+    });
+}
+    $('#myDude2').on("click",dudePoem2);
+
+
     //function to populate page with the poetry work that is clicked.
         const displayPoem = function (authorName) {
             let titleString = $(this).attr('data-poemTitle');
@@ -122,5 +151,15 @@ $(document).ready(function () {
             //         textRange.moveEnd("character", -1);
             //     }
             //     word = textRange.text;
+            // }
+
+
+            //code for accessing oxford dictionary
+              // $('#page2').empty();
+            // $('#page2').show();
+            // $('#page2').append(`<p>Word: ${response.results[0].id}</p>`)
+            // $('#page2').append(`<p>Etymology: ${response.results[0].entries[0].etymologies[0]}</p>`)
+            // for ( let i = 0; i < response.results[0].lexicalEntries[0].entries[0].senses.length; i++) {
+            // $('#page2').append(`<p>Definition: ${response.results[0].lexicalEntries[0].entries[0].senses[i].definitions[0]}</p>`);
             // }
     
