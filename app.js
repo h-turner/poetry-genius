@@ -1,13 +1,6 @@
 $(document).ready(function () {
 
-    // $('#opener').click(function() {
-    //     $('#defDialog').dialog();
-    //     return false;
-    // });
-
-    // const authorName =  $('#authInput').val().trim().toLowerCase();
-    // const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
-
+//function that populates page with works by searched Author.
     const dudePoem = function () {
 
         let authorName =  $('#authInput').val().trim().toLowerCase();
@@ -17,7 +10,7 @@ $(document).ready(function () {
         url: titlesURL,
         method: 'GET'
     }).then(function (response) {
-        $('.displayP').empty();  //lines are appended to displayP
+        $('.displayP').empty();
         for (let i = 0; i < response.length; i++) {
             console.log(response[i].title)
             let poemTitle = response[i].title;
@@ -27,15 +20,16 @@ $(document).ready(function () {
     });
 }
 
+//provides functionality to search button to run dudePoem function. Also works with 'enter' key.
 $(document).keypress(function(e) {
     if(e.which == 13) {
        dudePoem();
     }
-});
-
+ });
 $('#myDude').on("click",dudePoem);
 
 
+//function to populate page with the poetry work that is clicked.
     const displayPoem = function (authorName) {
         let titleString = $(this).attr('data-poemTitle'); //Data attribute of which poem was clicked on, 
         let urlString = titleString.split(' ').join('%20') //splits title at every space, inserts %20 at every
@@ -46,24 +40,85 @@ $('#myDude').on("click",dudePoem);
             method: 'GET'
         }).then(function (response) {
             console.log(response.lines);
-            // render ();
+            // targets display div, empties it, and repopulates it with poem.
             $('.displayP').empty();
             for (let i = 0; i < response[0].lines.length; i++) {
-                $('.displayP').append(`<p class="wordsDef">${response[0].lines[i]}</p>`)
+                let wordsArray = response[0].lines[i].split(' ');
+                console.log(wordsArray);
+                $('.displayP').append(`<p>${response[0].lines[i]}</p>`)
+                
+                console.log(wordsArray[0]);
             }
         })
 
     }
 
+//gets clicked on word (or selected text if text is selected)
+    $("#display").click(function() {
+        $('#page2').hide();
+        let word = '';
+        if (window.getSelection && (sel = window.getSelection()).modify) {
+            // Webkit, Gecko
+            var s = window.getSelection();
+            if (s.isCollapsed) {
+                s.modify('move', 'forward', 'character');
+                s.modify('move', 'backward', 'word');
+                s.modify('extend', 'forward', 'word');
+                word = s.toString();
+                s.modify('move', 'forward', 'character'); //clear selection
+            }
+        }
+        console.log(word);
+
     
-    // const defineWord = function() {
-    //     let wordDef = $(this).attr('data-word')
-    // }
+        var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://wordsapiv1.p.mashape.com/words/${word}`,
+        "method": "GET",
+        "headers": {
+          "X-Mashape-Key": "a647b507f6msh19b9c8f45abc13dp10ee28jsn1ab0da6d123b",
+          "cache-control": "no-cache",
+          "Postman-Token": "a435f077-ff32-4e13-af6f-de2fe9da04c8"
+        }
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        $('#page2').empty();
+        $('#page2').hide();
+        $('#page2').append(`<p>Word: ${response.word}</p>`)
+        $('#page2').append(`<p>Pronunciation: ${response.pronunciation.all}</p>`)
+        for ( let i = 0; i < response.results.length; i++) {
+        $('#page2').append(`<p>Definition: ${response.results[i].definition}</p>`);
+        }
+        $('#page2').show();
+        
+      });
+    });
+  
 });
 
 
 
-//leftovers
-//<a href="http://poetrydb.org/author,title/${authorName};${response[i].title}">${response[i].title}</a>
 
-//format is poetrydb.org/author,title/shakespeare;sonnet%201:%20from%20fairest%20creatures%20we%20desire%20increase
+
+
+
+
+
+
+
+// compatability for older browsers
+    // } else if ((sel = document.selection) && sel.type != "Control") {
+        //     // IE 4+
+        //     var textRange = sel.createRange();
+        //     if (!textRange.text) {
+        //         textRange.expand("word");
+        //     }
+        //     // Remove trailing spaces
+        //     while (/\s$/.test(textRange.text)) {
+        //         textRange.moveEnd("character", -1);
+        //     }
+        //     word = textRange.text;
+        // }

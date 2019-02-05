@@ -1,11 +1,7 @@
-/* #searchName {
-  width: 45%;
-} */
-
-.display-4 {
-  font-family: "Monsieur La Doulaise", cursive;
-  font-size: 99px;
-  font: bold;
+.display-4{
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 99px;
+    font:bold;
 }
 
 .lead {
@@ -13,14 +9,10 @@
   font-size: 26px;
 }
 
-#Authinput {
-  font-family: "Nanum Gothic", sans-serif;
-  font-size: 36px;  
-  text-align: center;
-}
-
-.wrapper {
-  position: relative;
+#Authinput{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size:28px;
+    text-align: center;
 }
 
 .container {
@@ -28,12 +20,6 @@
   border: hidden;
 }
 
-.wrapper {
-  height: 100px;
-  /* background-image: url(coffeehouse.jpg); */
-  height: 100%;
-  /* opacity: 0.5; */
-}
 .container-fluid {
   position: absolute;
   z-index: 10;
@@ -46,58 +32,10 @@
   background-color: transparent;
 }
 
-.form-control {
-  padding: 10px;
-  height: 50px;
-}
-
-#myDude {
-  position: absolute;
-  height: 30px;
-  width: 30px;
-}
-
-.fas fa-search{
-  height: 30px;
-  width: 30px;
-}
-
-
-/* .btn {
-  margin: 3% 45% 45% 45%;
-  opacity: 1;
-  width: 75px;
-} */
-
-.container {
-  /* background-image: url(https://earlyamericanists.files.wordpress.com/2012/10/background2.jpg); */
-}
-
 .jumbotron {
   padding: 30px 100px 30px 100px;
   text-align: center;
-  /* border: dashed 15px #66fcf1; */
-  /* background-image: url(https://earlyamericanists.files.wordpress.com/2012/10/background2.jpg); */
-  /* / -webkit-animation: Border 15s infinite alternate; */
 }
-
-/* @-webkit-keyframes Border {
-  20% {
-    border-color: #1f2833;
-  }
-  40% {
-    border-color: #45a29e;
-  }
-  60% {
-    border-color: #66fcf1;
-  }
-  80% {
-    border-color: #0b0c10;
-  }
-  100% {
-    border-color: #c5c6c7;
-  }
-} */
 
 .sbar {
   width: 300px;
@@ -116,8 +54,14 @@ body {
 }
 
 #display {
-  height: 450px;
-  width: 700px;
-  overflow: auto;
-  border-image-source: url(https://i.pinimg.com/474x/60/ec/20/60ec20c87d52f4903b89a0cd65b1d655--flourish-border-gaja.jpg);
+    height: 450px;
+    width: 700px;
+    overflow: auto;
+}
+
+#page2 {
+    float: right;
+    overflow: auto;
+    height: 450px;
+    width: 700px;
 }
