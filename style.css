@@ -1,4 +1,4 @@
-#openBook {
+/* #openBook {
     display:none;
 }
 #bookTitle{
@@ -6,11 +6,16 @@
     background-repeat: no-repeat;
     background-size: 100%;
     height: 1000px;
-}
-
-/* #closeBook {
-    display:none;
 } */
+#readBook{
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/1fd35520-edec-468a-bdc6-7a181ba081eb/day1sn-838eafe5-290e-4e7d-a044-eb640bc68ce0.jpg/v1/fill/w_1037,h_770,q_70,strp/old_book_by_mrs_robinson_day1sn-pre.jpg");
+    background-repeat: no-repeat;
+    background-size:100%;
+    height: 100%;
+}
+#closeBook {
+    display:none;
+}
 
 
 .display-4{
@@ -45,11 +50,9 @@
   padding-top: 3%;
   padding-bottom: 3%;
   background-color: transparent;
-}
-
-.jumbotron {
-  padding: 30px 100px 30px 100px;
+  padding: 135px 100px 30px 115px;
   text-align: center;
+
 }
 
 .sbar {
@@ -57,13 +60,15 @@
     margin: 0 auto;
 }
 
-.displayP {
+#displayP {
     color: black;
     font-weight: bolder;
     height: 450px;
     width: 700px;
     overflow: auto;
     cursor: pointer;
+    padding-left: 125px;
+
 }
 
 #readBook {
@@ -77,6 +82,7 @@
     height: 450px;
     width: 700px;
     overflow: auto;
+    margin-left: 50px;
 }
 
 #page2 {
@@ -84,6 +90,7 @@
     overflow: auto;
     height: 450px;
     width: 700px;
+    padding-left: 100px;
 }
 
 #titleFront {
