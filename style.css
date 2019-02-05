@@ -45,7 +45,9 @@
 .displayP {
     color: black;
     font-weight: bolder;
-    opacity: 100%;
+    height: 450px;
+    width: 700px;
+    overflow: auto;
 }
 
 body {
@@ -54,6 +56,8 @@ body {
 }
 
 #display {
+    color: black;
+    font-weight: bolder;
     height: 450px;
     width: 700px;
     overflow: auto;
