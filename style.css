@@ -1,6 +1,9 @@
+#openBook{
+    display:none;
+}
+
 .display-4{
     font-family: 'Monsieur La Doulaise', cursive;
-    font-size: 99px;
     font:bold;
 }
 
@@ -13,6 +16,7 @@
     font-family: 'Nanum Gothic', sans-serif;
     font-size:28px;
     text-align: center;
+    border-radius: 100%;
 }
 
 .container {
@@ -50,7 +54,7 @@
     overflow: auto;
 }
 
-body {
+#readBook {
     padding: 10px 55px;
     background-size: 99%;
 }
@@ -68,4 +72,23 @@ body {
     overflow: auto;
     height: 450px;
     width: 700px;
+}
+
+#bookTitle {
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#titleFront {
+    margin: 280px 5px 5px 35px;
+    color: lightslategrey;
+    
+}
+
+#cbTitle{
+    font-size: 65px;
+}
+
+#cbPara{
+    font-size: 13px;
 }
