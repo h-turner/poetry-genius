@@ -15,6 +15,8 @@ $(document).ready(function () {
             $('#displayP').hide();
             $('#display').show();
             $('#display').empty();
+            let element = document.getElementById("bodyImage"); 
+            element.classList.toggle("readBook")
             for (let i = 0; i < response.length; i++) {
                 console.log(response[i].title)
                 let poemTitle = response[i].title;
