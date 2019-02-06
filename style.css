@@ -28,13 +28,13 @@
 
 .display-4{
     font-family: 'Monsieur La Doulaise', cursive;
-    font:bold;
     font-size: 150px;
 }
 
-.lead{
-    font-family: 'Nanum Gothic', sans-serif;
+#cbPara{
+    font-family: 'Josefin Slab', serif;
     font-size: 26px;
+    font-weight: bold;
 }
 
 #authInput{
@@ -59,8 +59,9 @@
   padding-top: 3%;
   padding-bottom: 3%;
   background-color: transparent;
-  padding: 10px 100px 30px 115px;
+  padding: 40px 100px 30px 115px;
   text-align: center;
+  position: relative;
 
 }
 
@@ -71,31 +72,40 @@
 
 #displayP {
     color: black;
-    font-weight: bolder;
-    height: 450px;
+    font-weight: bold;
+    height: 525px;
     width: 700px;
     overflow: auto;
     cursor: pointer;
-    padding-left: 125px;
+    padding-left: 320px;
+    padding-right: 50px;
+    margin-top: 200px;
+    font-family: 'Josefin Slab', serif;
 
 }
 
 
 #display {
     color: black;
-    font-weight: bolder;
-    height: 450px;
+    font-weight: bold;
+    height: 525px;
     width: 700px;
     overflow: auto;
-    margin-left: 50px;
+    margin-top: 200px;
+    padding-left: 320px;
+    padding-right: 50px;
+    font-family: 'Josefin Slab', serif;
 }
 
 #page2 {
     float: right;
     overflow: auto;
-    height: 450px;
+    height: 525px;
     width: 700px;
-    padding-left: 100px;
+    padding-right: 200px;
+    margin-top: 125px;
+    font-family: 'Josefin Slab', serif;
+    font-weight: bold;
 }
 
 #titleFront {
@@ -108,7 +118,7 @@
     text-align: left;
     font-size: 60px;
     float:left;
-    margin: 60px 0 0 -130px;
+    margin: 52px 0 0 -203px;
     padding: 0;
 
 }
@@ -117,127 +127,45 @@
    display: none;
 }
 
-.obSearch{
+#authInput2 {
     float:right;
     margin: 75px 250px 0 0;
     width: 600px;
-    z-index: 1;
 }
 
-
-
-
-
-/* OLD CSS*/
-/* #openBook {
-    display:none;
-}
-#bookTitle{
-    background-image: url("https://media.istockphoto.com/photos/old-book-on-the-desk-picture-id478177344?k=6&m=478177344&s=612x612&w=0&h=3LV82UtmkGIruCOjTUWRMZRbXIjLC77ytdE2y6pSPEI=");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 1000px;
-} */
-/* #readBook{
-    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/1fd35520-edec-468a-bdc6-7a181ba081eb/day1sn-838eafe5-290e-4e7d-a044-eb640bc68ce0.jpg/v1/fill/w_1037,h_770,q_70,strp/old_book_by_mrs_robinson_day1sn-pre.jpg");
-    background-repeat: no-repeat;
-    background-size:100%;
-    height: 100%;
-}
-#closeBook {
-    display:none;
+#searchDiv {
+    position: relative;
 }
 
-
-.display-4{
-    font-family: 'Monsieur La Doulaise', cursive;
-    font:bold;
+#myDude {
+    position: absolute;
+    left: 52.5%;
+    top: 473px;
 }
 
-.lead{
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size: 26px;
+#myDude2 {
+    position: absolute;
+    left: 74%;
+    top: 75px;
 }
 
-#Authinput{
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size:28px;
-    text-align: center;
+#pageOneHead {
+float: left;
+font-family: 'Josefin Slab', serif;
+font-size: 20px;
+color: slategray;
+position: absolute;
+left: 11%;
+top: 25%;
 }
 
-.container {
-    border: 0px;
-    border:hidden;
-}
-
-.container-fluid {
-  position: absolute;
-  z-index: 10;
-}
-
-.jumbotron {
-  margin: 0px;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  background-color: transparent;
-  padding: 135px 100px 30px 115px;
-  text-align: center;
-
-}
-
-.sbar {
-    width: 300px;
-    margin: 0 auto;
-}
-
-#displayP {
-    color: black;
-    font-weight: bolder;
-    height: 450px;
-    width: 700px;
-    overflow: auto;
-    cursor: pointer;
-    padding-left: 125px;
-
-}
-
-#readBook {
-    padding: 10px 55px;
-    background-size: 99%;
-}
-
-#display {
-    color: black;
-    font-weight: bolder;
-    height: 450px;
-    width: 700px;
-    overflow: auto;
-    margin-left: 50px;
-}
-
-#page2 {
+#pageTwoHead {
     float: right;
-    overflow: auto;
-    height: 450px;
-    width: 700px;
-    padding-left: 100px;
-}
-
-#titleFront {
-    margin: 280px 5px 5px 35px;
-    color: lightslategrey;
+    font-family: 'Josefin Slab', serif;
+    position: absolute;
+    font-size: 20px;
+    color: slategray;
+    right: 10%;
+    top: 24%;
     
 }
-
-#cbTitle{
-    font-size: 65px;
-}
-
-#cbPara{
-    font-size: 13px;
-}
-
-body {
-    margin: 10px;
-}
- */
