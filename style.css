@@ -71,7 +71,7 @@
 #displayP {
     color: black;
     font-weight: bold;
-    height: 525px;
+    height: 65%;
     width: 700px;
     overflow: auto;
     cursor: pointer;
@@ -86,7 +86,7 @@
 #display {
     color: black;
     font-weight: bold;
-    height: 525px;
+    height: 65%;
     width: 700px;
     overflow: auto;
     margin-top: 40px;
@@ -98,7 +98,7 @@
 #page2 {
     float: right;
     overflow: auto;
-    height: 525px;
+    height: 65%;
     width: 700px;
     padding-right: 200px;
     font-family: 'Josefin Slab', serif;

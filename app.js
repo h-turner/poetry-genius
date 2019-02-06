@@ -27,11 +27,16 @@ $(document).ready(function () {
     }
     
     //provides functionality to search button to run dudePoem function. Also works with 'enter' key.
-    $(document).keypress(function(e) {
+    $('#closeBook').keypress(function(e) {
         if(e.which == 13) {
            dudePoem();
-           dudePoem2();
         }
+     });
+
+     $('#openBook').keypress(function(e) {
+         if(e.which == 13) {
+             dudePoem2();
+         }
      });
     $('#myDude').on("click",dudePoem);
   
@@ -47,9 +52,10 @@ $(document).ready(function () {
         url: titlesURL,
         method: 'GET'
     }).then(function (response) {
+        $('#display').empty();
+        $('#displayP').empty();
         $('#displayP').hide();
         $('#display').show();
-        $('#display').empty();
         for (let i = 0; i < response.length; i++) {
             console.log(response[i].title)
             let poemTitle = response[i].title;
@@ -64,6 +70,7 @@ $(document).ready(function () {
     //function to populate page with the poetry work that is clicked.
         const displayPoem = function (authorName) {
             let titleString = $(this).attr('data-poemTitle');
+            $('#pageOneHead').text(`Literary Work :  ${titleString}`);
             let urlString = titleString.split(' ').join('%20')
             console.log(urlString);
             const poemURL = `http://poetrydb.org/author,title/${authorName};${urlString}`
@@ -157,11 +164,27 @@ $(document).ready(function () {
 
 
             //code for accessing oxford dictionary
-              // $('#page2').empty();
-            // $('#page2').show();
-            // $('#page2').append(`<p>Word: ${response.results[0].id}</p>`)
-            // $('#page2').append(`<p>Etymology: ${response.results[0].entries[0].etymologies[0]}</p>`)
-            // for ( let i = 0; i < response.results[0].lexicalEntries[0].entries[0].senses.length; i++) {
-            // $('#page2').append(`<p>Definition: ${response.results[0].lexicalEntries[0].entries[0].senses[i].definitions[0]}</p>`);
-            // }
+        //     var settings = {
+        //         "async": true,
+        //         "crossDomain": true,
+        //         "url": `https://od-api.oxforddictionaries.com:443/api/v1/entries/en/${word}`,
+        //         "method": "GET",
+        //         "headers": {
+        //           "Accept": "application/json",
+        //           "app_id": "0e27f5dd",
+        //           "app_key": "70e4b55ebbf6a7bb5a12c44ee5de4f74",
+        //           "cache-control": "no-cache",
+        //           "Postman-Token": "051660f8-9644-4ebe-941a-5885232ddfeb"
+        //         }
+        //       }
+    
+        //   $.ajax(settings).done(function (response) {
+        //     console.log(response);
+        //     $('#page2').empty();
+        //     $('#page2').show();
+        //     $('#page2').append(`<p>Word: ${response.results[0].id}</p>`)
+        //     $('#page2').append(`<p>Etymology: ${response.results[0].entries[0].etymologies[0]}</p>`)
+        //     for ( let i = 0; i < response.results[0].lexicalEntries[0].entries[0].senses.length; i++) {
+        //     $('#page2').append(`<p>Definition: ${response.results[0].lexicalEntries[0].entries[0].senses[i].definitions[0]}</p>`);
+        //     }
     
