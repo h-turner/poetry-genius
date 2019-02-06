@@ -1,34 +1,45 @@
-#openBook {
-    display:none;
+#closeBook {
+    color:white;
+    font-weight: bolder;
+    font-size: 150px;
+    text-shadow: 3px 3px black;
 }
+
 #bookTitle{
-    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/16d967ef-6047-45c4-96ec-ea1cdfd9d7d2/d219p5-6e849abe-b7d2-49ae-ab21-7026bedadfca.png);
+    background-image: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2306&q=80");
     background-repeat: no-repeat;
-    background-size: 100%;
-    height: 700px;
-    overflow: auto;
+    background-size:100%;
+}
+#readBook{
+    background-image: url("https://images.unsplash.com/photo-1515707743625-2f8e5fd8f8b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80");
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position-y: -200px;
 }
 
-/* #closeBook {
-    display:none;
+#openBook{
+    display: none;
+}
+/* #closeBook{
+    display: inline;
 } */
-
 
 .display-4{
     font-family: 'Monsieur La Doulaise', cursive;
-    font:bold;
+    font-size: 150px;
 }
 
-.lead {
-  font-family: "Nanum Gothic", sans-serif;
-  font-size: 26px;
+#cbPara{
+    font-family: 'Josefin Slab', serif;
+    font-size: 26px;
+    font-weight: bold;
 }
 
-#Authinput{
+#authInput{
     font-family: 'Nanum Gothic', sans-serif;
     font-size:28px;
     text-align: center;
-    border-radius: 100%;
+    box-shadow: 3px 3px black;
 }
 
 .container {
@@ -46,11 +57,10 @@
   padding-top: 3%;
   padding-bottom: 3%;
   background-color: transparent;
-}
-
-.jumbotron {
-  padding: 30px 100px 30px 100px;
+  padding: 40px 100px 30px 115px;
   text-align: center;
+  position: relative;
+
 }
 
 .sbar {
@@ -58,45 +68,102 @@
   margin: 0 auto;
 }
 
-.displayP {
+#displayP {
     color: black;
-    font-weight: bolder;
-    height: 450px;
+    font-weight: bold;
+    height: 525px;
     width: 700px;
     overflow: auto;
     cursor: pointer;
+    padding-left: 320px;
+    padding-right: 50px;
+    margin-top: 30px;
+    font-family: 'Josefin Slab', serif;
+
 }
 
-#readBook {
-    padding: 10px 55px;
-    background-size: 99%;
-}
 
 #display {
     color: black;
-    font-weight: bolder;
-    height: 450px;
+    font-weight: bold;
+    height: 525px;
     width: 700px;
     overflow: auto;
+    margin-top: 30px;
+    padding-left: 320px;
+    padding-right: 50px;
+    font-family: 'Josefin Slab', serif;
 }
 
 #page2 {
     float: right;
     overflow: auto;
-    height: 450px;
+    height: 525px;
     width: 700px;
+    padding-right: 200px;
+    margin-top: 125px;
+    font-family: 'Josefin Slab', serif;
+    font-weight: bold;
 }
 
 #titleFront {
-    margin: 280px 5px 5px 35px;
-    color: lightslategrey;
+    margin: 189px 5px 5px 35px;
+    color: white;
     
 }
 
-#cbTitle{
-    font-size: 65px;
+#obTitle {
+    text-align: left;
+    font-size: 60px;
+    float:left;
+    margin-top: -25px;
+    padding: 0;
+
 }
 
-#cbPara{
-    font-size: 13px;
+#obPara {
+   display: none;
+}
+
+#searchDiv {
+    position: relative;
+    margin: 75px auto 0;
+    width: 600px;
+}
+
+#authInput2 {
+  width: 100%;
+}
+
+#myDude {
+    position: absolute;
+    left: 52.5%;
+    top: 473px;
+}
+
+#myDude2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#pageOneHead {
+float: left;
+font-family: 'Josefin Slab', serif;
+font-size: 20px;
+color: slategray;
+position: absolute;
+left: 11%;
+top: 25%;
+}
+
+#pageTwoHead {
+    float: right;
+    font-family: 'Josefin Slab', serif;
+    position: absolute;
+    font-size: 20px;
+    color: slategray;
+    right: 10%;
+    top: 24%;
+    
 }
