@@ -14,7 +14,7 @@
     crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body id="bookTitle">
 <div id ="closeBook">
   <section id="bookTitle">
     <div class="jumbotron jumbotron-fluid">
@@ -25,19 +25,16 @@
         <button id="myDude" type="button" class="btn btn-default">
           <i class="fas fa-search"></i>
         </button>
-      </div>
-    </div>
+      </div>    </div>
   </section>
 
 </div>
 
 <div id="openBook">
-
-  <section id="readBook">
+  <section id="readBook" class="clearfix">
     <div class="jumbotron jumbotron-fluid">
-      <div id="bookText" class="container">
+      <div id="bookText" class="clearfix">
         <h1 id="obTitle" class="display-4">Poetry Genius</h1>
-        <p id="obPara" class="lead">Enter an author name to see more!</p>
         <div id="searchDiv"><input id="authInput2" class="form-control form-control-sm sbar" type="text" placeholder="Author Name:" />
           <button id="myDude2" type="button" class="btn btn-default">
             <i class="fas fa-search"></i>
