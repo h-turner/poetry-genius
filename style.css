@@ -54,7 +54,7 @@
   z-index: 10;
 }
 
-.jumbotron {
+/* .jumbotron {
   margin: 0px;
   padding-top: 3%;
   padding-bottom: 3%;
@@ -63,7 +63,7 @@
   text-align: center;
   position: relative;
 
-}
+} */
 
 .sbar {
     width: 300px;
@@ -73,7 +73,7 @@
 #displayP {
     color: black;
     font-weight: bold;
-    height: 525px;
+    height: 65%;
     width: 700px;
     overflow: auto;
     cursor: pointer;
@@ -88,7 +88,7 @@
 #display {
     color: black;
     font-weight: bold;
-    height: 525px;
+    height: 65%;
     width: 700px;
     overflow: auto;
     margin-top: 200px;
@@ -100,7 +100,7 @@
 #page2 {
     float: right;
     overflow: auto;
-    height: 525px;
+    height: 65%;
     width: 700px;
     padding-right: 200px;
     margin-top: 125px;
@@ -131,9 +131,6 @@
     float:right;
     margin: 75px 250px 0 0;
     width: 600px;
-<<<<<<< HEAD
-    z-index: 1;
-=======
 }
 
 #searchDiv {
@@ -171,5 +168,4 @@ top: 25%;
     right: 10%;
     top: 24%;
     
->>>>>>> adc9d0e91634c4fbbc6b0a43110b3cbd7a6ca939
 }
