@@ -164,4 +164,3 @@ $(document).ready(function () {
             // for ( let i = 0; i < response.results[0].lexicalEntries[0].entries[0].senses.length; i++) {
             // $('#page2').append(`<p>Definition: ${response.results[0].lexicalEntries[0].entries[0].senses[i].definitions[0]}</p>`);
             // }
-    
