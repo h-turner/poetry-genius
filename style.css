@@ -1,6 +1,21 @@
+#openBook {
+    display:none;
+}
+#bookTitle{
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/intermediary/f/16d967ef-6047-45c4-96ec-ea1cdfd9d7d2/d219p5-6e849abe-b7d2-49ae-ab21-7026bedadfca.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 700px;
+    overflow: auto;
+}
+
+/* #closeBook {
+    display:none;
+} */
+
+
 .display-4{
     font-family: 'Monsieur La Doulaise', cursive;
-    font-size: 99px;
     font:bold;
 }
 
@@ -13,6 +28,7 @@
     font-family: 'Nanum Gothic', sans-serif;
     font-size:28px;
     text-align: center;
+    border-radius: 100%;
 }
 
 .container {
@@ -43,17 +59,22 @@
 }
 
 .displayP {
-  color: black;
-  font-weight: bolder;
-  opacity: 100%;
+    color: black;
+    font-weight: bolder;
+    height: 450px;
+    width: 700px;
+    overflow: auto;
+    cursor: pointer;
 }
 
-body {
-  padding: 10px 55px;
-  background-size: 99%;
+#readBook {
+    padding: 10px 55px;
+    background-size: 99%;
 }
 
 #display {
+    color: black;
+    font-weight: bolder;
     height: 450px;
     width: 700px;
     overflow: auto;
@@ -64,4 +85,18 @@ body {
     overflow: auto;
     height: 450px;
     width: 700px;
+}
+
+#titleFront {
+    margin: 280px 5px 5px 35px;
+    color: lightslategrey;
+    
+}
+
+#cbTitle{
+    font-size: 65px;
+}
+
+#cbPara{
+    font-size: 13px;
 }

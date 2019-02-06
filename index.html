@@ -1,4 +1,5 @@
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,29 +28,60 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+=======
+>>>>>>> 7584a105fd7bc996c3d7cd7704328cf88d4eeff9
 
-  <body background="http://clipart-library.com/images/ziXeRqGBT.jpg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Poetry Genius</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="reset.css" />
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Monsieur+La+Doulaise" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id ="closeBook">
+  <section id="bookTitle" background="https://media.istockphoto.com/photos/old-book-on-the-desk-picture-id478177344?k=6&m=478177344&s=612x612&w=0&h=3LV82UtmkGIruCOjTUWRMZRbXIjLC77ytdE2y6pSPEI=">
     <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Poetry Genius</h1>
-        <p class="lead">Enter a poetry title or author name to learn more!</p>
-          <input
-            id="authInput"
-            class="form-control form-control-sm sbar"
-            type="text"
-            placeholder="Author Name:"
-          />
-          <button id="myDude" type="button" class="btn btn-default">
-            <i class="fas fa-search"></i>
-          </button>
+      <div id="titleFront" class="container">
+        <h1 id="cbTitle" class="display-4">Poetry Genius</h1>
+        <p id="cbPara" class="lead">Enter a poetry title or author name to learn more!</p>
+        <input id="authInput" class="form-control form-control-sm sbar" type="text" placeholder="Author Name:" />
+        <button id="myDude" type="button" class="btn btn-default">
+          <i class="fas fa-search"></i>
+        </button>
+      </section>
+
+</div>
+
+<div id="openBook">
+
+  <section id="readBook" background="https://goodstock.photos/wp-content/uploads/blank-open-notebook-coffee-wood-desk.jpg">
+    <div class="jumbotron jumbotron-fluid">
+      <div id="bookText" class="container">
+        <h1 id="opTitle" class="display-4">Poetry Genius</h1>
+        <p id="opPara" class="lead">Enter a poetry title or author name to learn more!</p>
+        <input id="authInput" class="form-control form-control-sm sbar" type="text" placeholder="Author Name:" />
+        <button id="myDude" type="button" class="btn btn-default">
+          <i class="fas fa-search"></i>
+        </button>
       </div>
     </div>
-      <div class="container-fluid" id="display">
-        <ul class="displayP">
-          
-        </ul>
-      </div>
-      <div id="page2"></div>
-    <script src="app.js"></script>
-  </body>
+    <div class="container-fluid" id="display"></div>
+    <div class="container-fluid" id="displayP"></div>
+
+
+    <div id="page2"></div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
 </html>
