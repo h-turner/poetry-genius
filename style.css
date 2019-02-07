@@ -69,10 +69,10 @@
     color: black;
     font-weight: bold;
     height: 65%;
-    width: 700px;
+    width: 730px;
     overflow: auto;
     cursor: pointer;
-    padding-left: 320px;
+    padding-left: 290px;
     padding-right: 50px;
     margin-top: 40px;
     font-family: 'Josefin Slab', serif;
@@ -97,10 +97,12 @@
     overflow: auto;
     height: 65%;
     width: 700px;
-    padding-right: 200px;
     font-family: 'Josefin Slab', serif;
     font-weight: bold;
+    padding-right: 75px;
+    padding-left: 200px;
     margin-top: 40px;
+    margin-right: 230px;
 }
 
 #titleFront {
@@ -188,3 +190,9 @@ top: 28%;
   ::-webkit-scrollbar-thumb:hover {
     background: transparent; 
   }
+
+
+
+ 
+
+ 
