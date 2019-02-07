@@ -68,6 +68,8 @@ $(document).ready(function () {
         $('#displayP').empty();
         $('#displayP').hide();
         $('#display').show();
+        $('#pageOneHead').html(`<u>Literary Work : </u>`);
+        $('#page2').empty();
         for (let i = 0; i < response.length; i++) {
             console.log(response[i].title)
             let poemTitle = response[i].title;
@@ -83,7 +85,7 @@ $(document).ready(function () {
     //function to populate page with the poetry work that is clicked.
         const displayPoem = function (authorName) {
             let titleString = $(this).attr('data-poemTitle');
-            $('#pageOneHead').text(`Literary Work :  ${titleString}`);
+            $('#pageOneHead').html(`<u>Literary Work :</u>  ${titleString}`);
             let urlString = titleString.split(' ').join('%20')
             console.log(urlString);
             const poemURL = `http://poetrydb.org/author,title/${authorName};${urlString}`
@@ -110,6 +112,7 @@ $(document).ready(function () {
         $("#displayP").click(function() {
             $('#page2').hide();
             let word = '';
+            //this code was borrowed from a JSFiddle post suggested by Stack Overflow user stevendaniels (http://jsfiddle.net/Vap7C/80/)(https://stackoverflow.com/questions/7563169/detect-which-word-has-been-clicked-on-within-a-text)
             if (window.getSelection && (sel = window.getSelection()).modify) {
                 // Webkit, Gecko
                 var s = window.getSelection();
@@ -122,6 +125,7 @@ $(document).ready(function () {
                 }
 
             }
+            //end borrowed code//
             if (word.includes("'st")){
                 var newWord = word.replace("'st", "");
             }
@@ -160,14 +164,14 @@ $(document).ready(function () {
             $('#displayP').hide();
             $('#display').show();
             $('#page2').empty();
-            $('#pageOneHead').text("Literary Work :");
+            $('#pageOneHead').html(`<u>Literary Work :</u>`);
         }
       
 
         const homePage = function() {
             let element = document.getElementById("bodyImage"); 
             element.classList.toggle("readBook");
-            $('#pageOneHead').text("Literary Work :");
+            $('#pageOneHead').html(`<u>Literary Work :</u>`);
             $('#openBook').hide();
             $('#closeBook').show();
             $('#displayP').hide();
