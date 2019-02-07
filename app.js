@@ -84,6 +84,7 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response.lines);
             // targets display div, empties it, and repopulates it with poem.
+            $('#displayP').empty();
             $('#display').hide();
             $('#displayP').show();
             for (let i = 0; i < response[0].lines.length; i++) {

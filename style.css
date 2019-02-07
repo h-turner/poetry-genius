@@ -203,11 +203,12 @@ top: 28%;
   }
 
   #easterEgg{
-      background: transparent;
+      background: cadetblue;
+      opacity: .2;
       border: transparent;
       padding: 32px 6px;
       height: 10px;
       float: right;
-      margin-top: 187px;
-      margin-right: 433px;
+      margin-top: 145px;
+      margin-right: 408px;
   }
