@@ -5,17 +5,15 @@
     text-shadow: 3px 3px black;
 }
 
-#bookTitle{
+.bookTitle{
     background-image: url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2306&q=80");
     background-repeat: no-repeat;
     background-size:100%;
-    height: 100%;
 }
-#readBook{
+.readBook{
     background-image: url("https://images.unsplash.com/photo-1515707743625-2f8e5fd8f8b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80");
     background-repeat: no-repeat;
     background-size:100%;
-    height: 100%;
     background-position-y: -200px;
 }
 
@@ -45,8 +43,8 @@
 }
 
 .container {
-    border: 0px;
-    border:hidden;
+  border: 0px;
+  border: hidden;
 }
 
 .container-fluid {
@@ -66,8 +64,8 @@
 }
 
 .sbar {
-    width: 300px;
-    margin: 0 auto;
+  width: 300px;
+  margin: 0 auto;
 }
 
 #displayP {
@@ -79,7 +77,7 @@
     cursor: pointer;
     padding-left: 320px;
     padding-right: 50px;
-    margin-top: 200px;
+    margin-top: 40px;
     font-family: 'Josefin Slab', serif;
 
 }
@@ -91,7 +89,7 @@
     height: 65%;
     width: 700px;
     overflow: auto;
-    margin-top: 200px;
+    margin-top: 40px;
     padding-left: 320px;
     padding-right: 50px;
     font-family: 'Josefin Slab', serif;
@@ -103,9 +101,9 @@
     height: 65%;
     width: 700px;
     padding-right: 200px;
-    margin-top: 125px;
     font-family: 'Josefin Slab', serif;
     font-weight: bold;
+    margin-top: 40px;
 }
 
 #titleFront {
@@ -118,8 +116,9 @@
     text-align: left;
     font-size: 60px;
     float:left;
-    margin: 52px 0 0 -203px;
-    padding: 0;
+    margin-top: -25px;
+    padding-left: 40px;
+    color: white;
 
 }
 
@@ -127,14 +126,14 @@
    display: none;
 }
 
-#authInput2 {
-    float:right;
-    margin: 75px 250px 0 0;
+#searchDiv {
+    position: relative;
+    margin: 75px auto 0;
     width: 600px;
 }
 
-#searchDiv {
-    position: relative;
+#authInput2 {
+  width: 100%;
 }
 
 #myDude {
@@ -145,8 +144,8 @@
 
 #myDude2 {
     position: absolute;
-    left: 74%;
-    top: 75px;
+    right: 0;
+    bottom: 0;
 }
 
 #pageOneHead {
@@ -168,4 +167,8 @@ top: 25%;
     right: 10%;
     top: 24%;
     
+}
+
+#obJumbo {
+  padding-left: 0;
 }
