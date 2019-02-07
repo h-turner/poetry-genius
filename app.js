@@ -1,16 +1,5 @@
 $(document).ready(function () {
 
-    // var authorList = [];
-    // var authorURL = 'http://poetrydb.org/author/'
-
-    // $.ajax({
-    //     url: authorURL,
-    //     method: 'GET'
-    // }).then(function (response) {
-    //     console.log(response);
-    //     console.log(authorList);
-    // });
-
     //function that populates page with works by searched Author.
     const dudePoem = function () {
 
@@ -201,7 +190,6 @@ $(document).ready(function () {
     $('#obTitle').on("click", homePage);
     $('#pageOneHead').on("click", returnTitle)
 });
-
 
 
 
