@@ -200,7 +200,6 @@ $(document).ready(function () {
 
 
 
-
     // compatability for older browsers
         // } else if ((sel = document.selection) && sel.type != "Control") {
             //     // IE 4+
