@@ -15,6 +15,7 @@ $(document).ready(function () {
             $('#displayP').hide();
             $('#display').show();
             $('#display').empty();
+            $('#page2').empty();
             let element = document.getElementById("bodyImage"); 
             element.classList.toggle("readBook")
             for (let i = 0; i < response.length; i++) {
@@ -65,6 +66,7 @@ $(document).ready(function () {
     });
 }
     $('#myDude2').on("click",dudePoem2);
+    $('#obTitle').on("click")
 
 
     //function to populate page with the poetry work that is clicked.
@@ -107,14 +109,21 @@ $(document).ready(function () {
                     word = s.toString();
                     s.modify('move', 'forward', 'character'); //clear selection
                 }
+
             }
-            console.log(word);
-    
+            if (word.includes("'st")){
+                var newWord = word.replace("'st", "");
+            }
+            else if (word.includes("'s")){
+                var newWord = word.replace("'s", "");
+            } else{
+                var newWord = word.replace("'", "e");
+            }
         
             var settings = {
             "async": true,
             "crossDomain": true,
-            "url": `https://wordsapiv1.p.mashape.com/words/${word}`,
+            "url": `https://wordsapiv1.p.mashape.com/words/${newWord}`,
             "method": "GET",
             "headers": {
               "X-Mashape-Key": "a647b507f6msh19b9c8f45abc13dp10ee28jsn1ab0da6d123b",
@@ -135,7 +144,31 @@ $(document).ready(function () {
             
           });
         });
+
+        const returnTitle = function (){
+            $('#displayP').hide();
+            $('#display').show();
+            $('#page2').empty();
+            $('#pageOneHead').text("Literary Work :");
+        }
       
+
+        const homePage = function() {
+            let element = document.getElementById("bodyImage"); 
+            element.classList.toggle("readBook");
+            $('#pageOneHead').text("Literary Work :");
+            $('#openBook').hide();
+            $('#closeBook').show();
+            $('#displayP').hide();
+            $('#display').hide();
+            $('#display').empty();
+            $('#page2').empty();
+            $('#authInput').val('');
+            $('#authInput2').val('');
+        }
+
+        $('#obTitle').on("click", homePage);
+        $('#pageOneHead').on("click", returnTitle)
     });
     
     
@@ -186,5 +219,4 @@ $(document).ready(function () {
         //     $('#page2').append(`<p>Etymology: ${response.results[0].entries[0].etymologies[0]}</p>`)
         //     for ( let i = 0; i < response.results[0].lexicalEntries[0].entries[0].senses.length; i++) {
         //     $('#page2').append(`<p>Definition: ${response.results[0].lexicalEntries[0].entries[0].senses[i].definitions[0]}</p>`);
-        //     }
-    
+
