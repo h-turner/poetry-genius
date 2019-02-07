@@ -15,6 +15,7 @@ $(document).ready(function () {
             $('#displayP').hide();
             $('#display').show();
             $('#display').empty();
+            $('#page2').empty();
             let element = document.getElementById("bodyImage"); 
             element.classList.toggle("readBook")
             for (let i = 0; i < response.length; i++) {
@@ -147,6 +148,7 @@ $(document).ready(function () {
         const returnTitle = function (){
             $('#displayP').hide();
             $('#display').show();
+            $('#page2').empty();
             $('#pageOneHead').text("Literary Work :");
         }
       
@@ -154,11 +156,13 @@ $(document).ready(function () {
         const homePage = function() {
             let element = document.getElementById("bodyImage"); 
             element.classList.toggle("readBook");
+            $('#pageOneHead').text("Literary Work :");
             $('#openBook').hide();
             $('#closeBook').show();
             $('#displayP').hide();
             $('#display').hide();
             $('#display').empty();
+            $('#page2').empty();
             $('#authInput').val('');
             $('#authInput2').val('');
         }
