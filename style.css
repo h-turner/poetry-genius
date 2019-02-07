@@ -16,6 +16,17 @@
     background-size:100%;
     background-position-y: -200px;
 }
+.easterEgg{
+    background: #101010;
+    background-repeat: no-repeat;
+    
+}
+#eggs{
+    display: none;
+    height: 600px;
+    width: 700px;
+    margin: 100px 370px;
+}
 
 #openBook{
     display: none;
@@ -191,8 +202,20 @@ top: 28%;
     background: transparent; 
   }
 
+<<<<<<< HEAD
 
 
  
 
  
+=======
+  #easterEgg{
+      background: transparent;
+      border: transparent;
+      padding: 32px 6px;
+      height: 10px;
+      float: right;
+      margin-top: 110px;
+      margin-right: 385px;
+  }
+>>>>>>> 991e424cea217fc8151c1b106899f36809a3e005
