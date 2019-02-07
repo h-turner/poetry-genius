@@ -20,9 +20,7 @@
 #openBook{
     display: none;
 }
-/* #closeBook{
-    display: inline;
-} */
+
 
 .display-4{
     font-family: 'Monsieur La Doulaise', cursive;
@@ -32,7 +30,6 @@
 #cbPara{
     font-family: 'Josefin Slab', serif;
     font-size: 26px;
-    font-weight: bold;
 }
 
 #authInput{
@@ -133,7 +130,7 @@
 }
 
 #authInput2 {
-  width: 100%;
+  width: 500px;
 }
 
 #myDude {
@@ -144,7 +141,7 @@
 
 #myDude2 {
     position: absolute;
-    right: 0;
+    right: 45px;
     bottom: 0;
 }
 
@@ -155,7 +152,7 @@ font-size: 20px;
 color: slategray;
 position: absolute;
 left: 11%;
-top: 25%;
+top: 28%;
 }
 
 #pageTwoHead {
@@ -165,10 +162,29 @@ top: 25%;
     font-size: 20px;
     color: slategray;
     right: 10%;
-    top: 24%;
+    top: 27%;
     
 }
 
 #obJumbo {
-  padding-left: 0;
+    padding: 10px 100px 90px 0px;
 }
+
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background-image: url("https://img.icons8.com/small/16/000000/pen.png");
+    background-repeat: no-repeat; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent; 
+  }
