@@ -1,15 +1,21 @@
 $(document).ready(function () {
-
-    //function that populates page with works by searched Author.
+//function that populates page with works by searched Author.
     const dudePoem = function () {
 
         let authorName = $('#authInput').val().trim().toLowerCase();
-        const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
-
-        $.ajax({
-            url: titlesURL,
-            method: 'GET'
-        }).then(function (response) {
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://thundercomb-poetry-db-v1.p.rapidapi.com/author/${authorName}`,
+        "method": "GET",
+        "headers": {
+          "X-RapidAPI-Key": "yKFUUY7IAlmshzCzcSFSB0hLttKip1ETe9xjsnzanv9YUt67XY",
+          "cache-control": "no-cache",
+          "Postman-Token": "8b1ecc63-ef3c-4d20-9470-870415b4b21e"
+        },
+    }
+        $.ajax(settings).done(function (response) {
+            console.log(response);
             $('#closeBook').hide();
             $('#openBook').show();
             $('#displayP').hide();
@@ -26,6 +32,10 @@ $(document).ready(function () {
             $('.titleP').on("click", displayPoem);
         });
     }
+    
+      
+    
+            
 
     //provides functionality to search button to run dudePoem function. Also works with 'enter' key.
     $('#closeBook').keypress(function (e) {
@@ -47,12 +57,21 @@ $(document).ready(function () {
     const dudePoem2 = function () {
 
         let authorName = $('#authInput2').val().trim().toLowerCase();
-        const titlesURL = `http://poetrydb.org/author/${authorName}/title`;
-
-        $.ajax({
-            url: titlesURL,
-            method: 'GET'
-        }).then(function (response) {
+        
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": `https://thundercomb-poetry-db-v1.p.rapidapi.com/author/${authorName}`,
+            "method": "GET",
+            "headers": {
+              "X-RapidAPI-Key": "yKFUUY7IAlmshzCzcSFSB0hLttKip1ETe9xjsnzanv9YUt67XY",
+              "cache-control": "no-cache",
+              "Postman-Token": "8b1ecc63-ef3c-4d20-9470-870415b4b21e"
+            },
+        }
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+       
             $('#display').empty();
             $('#displayP').empty();
             $('#displayP').hide();
@@ -77,12 +96,20 @@ $(document).ready(function () {
         $('#pageOneHead').html(`<u>Literary Work :</u>  ${titleString}`);
         let urlString = titleString.split(' ').join('%20')
         console.log(urlString);
-        const poemURL = `http://poetrydb.org/author,title/${authorName};${urlString}`
-        $.ajax({
-            url: poemURL,
-            method: 'GET'
-        }).then(function (response) {
-            console.log(response.lines);
+        const poemURL = `https://thundercomb-poetry-db-v1.p.rapidapi.com/author,title/${authorName};${urlString}`
+
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": poemURL,
+            "method": "GET",
+            "headers": {
+              "X-RapidAPI-Key": "yKFUUY7IAlmshzCzcSFSB0hLttKip1ETe9xjsnzanv9YUt67XY",
+              "cache-control": "no-cache",
+              "Postman-Token": "5db3ac4e-8903-408e-8920-7f63f8444f1f"
+            },
+        }
+            $.ajax(settings).done(function (response) {
             // targets display div, empties it, and repopulates it with poem.
             $('#displayP').empty();
             $('#display').hide();
@@ -154,7 +181,9 @@ $(document).ready(function () {
         $('#displayP').hide();
         $('#display').show();
         $('#page2').empty();
+        $('#displayP').empty();
         $('#pageOneHead').html(`<u>Literary Work :</u>`);
+        
     }
 
 
@@ -167,6 +196,7 @@ $(document).ready(function () {
         $('#displayP').hide();
         $('#display').hide();
         $('#display').empty();
+        $('#displayP').empty();
         $('#page2').empty();
         $('#authInput').val('');
         $('#authInput2').val('');
@@ -240,3 +270,6 @@ $(document).ready(function () {
         //     for ( let i = 0; i < response.results[0].lexicalEntries[0].entries[0].senses.length; i++) {
         //     $('#page2').append(`<p>Definition: ${response.results[0].lexicalEntries[0].entries[0].senses[i].definitions[0]}</p>`);
 
+
+
+   
